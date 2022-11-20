@@ -793,6 +793,18 @@ tspan{
     </div>
     <div class="content-body"><!-- project stats -->
 
+
+        <?php
+        $datetime1 = new \DateTime();//start time
+        $datetime2 = new \DateTime('2023-03-21 24:54:00');//end time
+        $interval = $datetime1->diff($datetime2);
+        ?>
+        <div style="font-family:Byekan" class="alert alert-success">
+            <ul>
+            <p> {{ $interval->format(' %m ماه %d روز %H ساعت %i دقیقه %s ثانیه مانده به تحویل سال 1402') }}</p>
+            </ul>
+        </div>
+
         @if (count($baners) > 0)
         @foreach($baners as $baner)
             <div class="alert alert-info alert-dismissible">
